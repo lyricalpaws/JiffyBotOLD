@@ -126,7 +126,7 @@ if (message.author.bot) return;
 
     if (message.channel.type === 'dm'){
        if (message.content.startsWith(prefix)) return;
-       client.users.get('127452209070735361').send(`${message.author.username}#${message.author.discriminator} (${message.author.id}): ${message.content}`);
+       client.users.get('[your ID]').send(`${message.author.username}#${message.author.discriminator} (${message.author.id}): ${message.content}`);
     }
     if (!message.content.startsWith(prefix)) return;
 
@@ -237,10 +237,9 @@ function clean(text) {
   .setTitle("Dev <:MBlep:363052180598423553>")
   .addField("eval", "Evaluates the given code.")
   .addField("owo", "OwO What's this~?")
-  .addField("steal", "Take yer invites!")
   .addField("restart", "Fairly obvious")
 
-    if (message.author.id !== "127452209070735361"){
+    if (message.author.id !== "[your ID]"){
   message.author.sendEmbed(tool).catch(console.error)
   message.author.sendEmbed(fun).catch(console.error)
   message.author.sendEmbed(admin).catch(console.error)
@@ -513,16 +512,6 @@ if(command === "hug"){
       process.exit();
     }
   }
-
-  if (message.content.startsWith(prefix + "steal")){
-    if (message.author.id !== "127452209070735361")
-      return message.reply("You don't have permissions to use this! Ehehehe sneaky boy! Gotcha :)");
-  else {
-  message.guild.channels.get(message.channel.id).createInvite().then(invite =>
-  client.users.get("127452209070735361").send(`${invite.url}`))
-  message.delete()
-  }
-}
 
 });
 
